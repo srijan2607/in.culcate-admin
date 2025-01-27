@@ -12,6 +12,9 @@ const registeruser = require("./routers/register");
 const adminAuth = require("./routers/admin");
 const Article = require("./routers/article");
 const Authentication = require("./middleware/authentication");
+const home = require("./routers/home");
+const getallusers = require("./routers/users-list")
+
 
 // Security Packages
 const helmet = require("helmet");
@@ -32,6 +35,8 @@ app.use(xss());
 app.use("/api/admin/v1/auth", adminAuth);
 app.use("/api/admin/v1/register", Authentication, registeruser);
 app.use("/api/admin/v1/article", Authentication, Article);
+app.use("/api/admin/v1/home",Authentication, home);
+app.use("/api/admin/v1/users", Authentication, getallusers);
 
 // Server Port
 const port = process.env.PORT || 6000;

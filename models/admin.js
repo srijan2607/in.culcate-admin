@@ -25,6 +25,10 @@ const adminSchema = new mongoose.Schema({
     required: [true, "Please provide password"],
     minlength: 6,
   },
+  createdAt: { 
+    type: Date, 
+    default: Date.now 
+  },
 });
 
 adminSchema.pre("save", async function () {
