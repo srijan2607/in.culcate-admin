@@ -1,3 +1,5 @@
+// app.jsx
+
 require("dotenv").config();
 require("express-async-errors");
 
@@ -7,7 +9,7 @@ const connectDB = require("./db/connect");
 
 // Routes
 const registeruser = require("./routers/register");
-const adminlogin = require("./routers/login");
+const adminAuth = require("./routers/admin");
 const Article = require("./routers/article");
 const Authentication = require("./middleware/authentication");
 
@@ -27,7 +29,7 @@ app.use(xss());
 
 // Routes Middleware
 
-app.use("/api/admin/v1/auth", adminlogin);
+app.use("/api/admin/v1/auth", adminAuth);
 app.use("/api/admin/v1/register", Authentication, registeruser);
 app.use("/api/admin/v1/article", Authentication, Article);
 

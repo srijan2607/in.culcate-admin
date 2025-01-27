@@ -1,3 +1,6 @@
+// models/user
+
+
 const { v4: uuidv4 } = require("uuid");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
