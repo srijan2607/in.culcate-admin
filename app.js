@@ -1,4 +1,4 @@
-// app.jsx
+// app.jx
 
 require("dotenv").config();
 require("express-async-errors");
@@ -10,11 +10,11 @@ const connectDB = require("./db/connect");
 // Routes
 const registeruser = require("./routers/register");
 const adminAuth = require("./routers/admin");
-const Article = require("./routers/article");
 const Authentication = require("./middleware/authentication");
 const home = require("./routers/home");
-const getallusers = require("./routers/users-list")
-
+const getallusers = require("./routers/users-list");
+const article_short = require("./routers/article_short");
+const article_long = require("./routers/article_long");
 
 // Security Packages
 const helmet = require("helmet");
@@ -31,12 +31,12 @@ app.use(cors());
 app.use(xss());
 
 // Routes Middleware
-
 app.use("/api/admin/v1/auth", adminAuth);
 app.use("/api/admin/v1/register", Authentication, registeruser);
-app.use("/api/admin/v1/article", Authentication, Article);
-app.use("/api/admin/v1/home",Authentication, home);
+app.use("/api/admin/v1/home", Authentication, home);
 app.use("/api/admin/v1/users", Authentication, getallusers);
+app.use("/api/admin/v1/short_article", Authentication, article_short);
+app.use("/api/admin/v1/long_article", Authentication, article_long);
 
 // Server Port
 const port = process.env.PORT || 6000;

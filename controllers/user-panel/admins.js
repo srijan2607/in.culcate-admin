@@ -1,12 +1,13 @@
 const admin = require("../../models/Admin");
 const { StatusCodes } = require("http-status-codes");
-const { BadRequestError, UnauthenticatedError } = require("../errors");
+const { BadRequestError, UnauthenticatedError } = require("../../errors");
 
 // routes
 const getalladmin = async (req, res) => {
   const admins = await admin.find({});
   res.status(StatusCodes.OK).json({ admins });
 };
+
 const deleteadmin = async (req, res) => {
     const { id } = req.params;
     if (!id) {

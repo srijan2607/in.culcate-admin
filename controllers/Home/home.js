@@ -1,16 +1,20 @@
+// controllers/home/home.js
+
 const User = require("../../models/User");
-const admin = require("../../models/Admin");
+const Admin = require("../../models/Admin");
 const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, NotFoundError } = require("../../errors");
 
-// routes
+// Controller methods
 const getalluserNo = async (req, res) => {
-  const users = await user.find({});
+  const users = await User.find({});
   res.status(StatusCodes.OK).json({ Count: users.length });
 };
+
 const getalladminNo = async (req, res) => {
-    const admins = await admin.find({});
-    res.status(StatusCodes.OK).json({ Count: admins.length });
+  const admins = await Admin.find({});
+  res.status(StatusCodes.OK).json({ Count: admins.length });
 };
-// add the count for the articles 
+
+// Export the controller methods
 module.exports = { getalluserNo, getalladminNo };

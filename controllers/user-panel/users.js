@@ -1,6 +1,6 @@
 const user = require("../../models/User");
 const { StatusCodes } = require("http-status-codes");
-const { BadRequestError, UnauthenticatedError } = require("../errors");
+const { BadRequestError } = require("../../errors");
 
 // routes
 const getalluser = async (req, res) => {

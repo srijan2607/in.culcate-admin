@@ -2,9 +2,9 @@
 
 const express = require("express");
 const router = express.Router();
-const home = require("../controllers/home");
+const { getalluserNo, getalladminNo } = require("../controllers/Home/home");
 
-router.get("/", home);
+router.get("/users-count", getalluserNo);
+router.get("/admins-count", getalladminNo);
 
 module.exports = router;
-

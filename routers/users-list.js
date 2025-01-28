@@ -1,12 +1,15 @@
 // routers/users-list.js
 const express = require("express");
 const router = express.Router();
-const users = require("../controllers/user-panel/users")
-const admins = require("../controllers/user-panel/admins")
+const {
+  getalladmin,
+  deleteadmin,
+} = require("../controllers/user-panel/admins");
+const { getalluser, deleteuser } = require("../controllers/user-panel/users");
 
-router.get("/users", users);
-router.delete("/users/:id", users)
-router.get("/admins", admins);
-router.delete("/admins/:id", admins)
+router.get("/users", getalluser);
+router.delete("/users/:id", deleteuser);
+router.get("/admins", getalladmin);
+router.delete("/admins/:id", deleteadmin);
 
 module.exports = router;

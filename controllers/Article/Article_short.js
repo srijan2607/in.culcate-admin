@@ -1,8 +1,8 @@
-// controllers/article/article.js
+// controllers/article/article_short.js
 
-const sendArticle = (req, res) => {
+const sendArticle_short = (req, res) => {
   // Your logic for handling the request
   res.status(200).json({ message: "Article sent" });
 };
 
-module.exports = sendArticle;
+module.exports = sendArticle_short;
