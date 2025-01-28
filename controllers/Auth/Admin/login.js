@@ -1,6 +1,6 @@
 // controllers/auth/admin/login.js
 
-const Admin = require("../../../models/Admin");
+const Admin = require("../../../models/admin");
 const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, UnauthenticatedError } = require("../../../errors");
 

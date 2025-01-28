@@ -2,7 +2,7 @@
 
 // controllers/Auth/Admin/register.js
 
-const admin = require("../../../models/Admin");
+const admin = require("../../../models/admin");
 const { StatusCodes } = require("http-status-codes");
 
 const register = async (req, res) => {
