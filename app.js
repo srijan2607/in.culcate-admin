@@ -1,4 +1,4 @@
-// app.jx
+// app.js
 
 require("dotenv").config();
 require("express-async-errors");
